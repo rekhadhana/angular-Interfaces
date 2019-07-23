@@ -1,0 +1,28 @@
+
+<div class="container border" id="con">
+<div class="header">
+  <h5 class="title" id="exampleModalLabel"> <strong>Brief Agency</strong></h5>
+  
+  <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      
+  </button>
+</div>
+
+<input type="search" id="search" class="form-control" placeholder="Search Agency" [(ngModel)]="filteredAgency">
+
+<div id="data" class="border" *ngFor="let agency of agencies|filtr:filteredAgency:'agencyName'">
+  <!-- body you want -->
+  <div>
+     <h5>{{agency.agencyName}}</h5>
+     <span class="text-muted">{{agency.agencyType}}</span> 
+     <span class="text-muted" id="location">{{agency.agencyLocation}}</span>
+  </div>
+  <div>
+    <p class="text-muted mr-3">Recomended</p>
+    <a href="#" class="text-decoration-none text-warning">Brief</a>
+  </div>
+</div> 
+</div>
+
+<!-- <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table> -->
